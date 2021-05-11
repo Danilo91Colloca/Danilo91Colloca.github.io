@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpotifyWebDC</title>
+    <link rel="icon" href="img/icon/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- TOTAL PAGE -->
+    <div class="wrapper bg-color-blackrussian">
+      <!-- CONTAINER MAIN PAGE -->
+      <main class="main-page-container clearfix">
+        <!-- SIDE-BAR SECTION -->
+        <section class="side-bar bg-color-black float-l  flex-column hidden-height90">
+          <!-- side-bar top logo/nav menu/ playlist button -->
+          <div class="side-top">
+            <div class="logo-container  hidden-xs">
+              <img src="img/icon/logo.svg" alt="" class="">
+            </div>
+            <div class="xs-logo-sidebar font-white hidden-sm hidden-md">
+              <i class="fa fa-spotify" aria-hidden="true">
+              </i>
+            </div>
+            <div class="nav-side-b">
+              <ul>
+                <li>
+                  <a href="#">
+                    <div class="vertical-line">
+                    </div>
+                    <img src="img/icon/home.svg" alt="">
+                    <span class="hidden-xs menu">
+                      Home
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="vertical-line">
+                    </div>
+                    <img src="img/icon/search.svg" alt="">
+                    <span class="hidden-xs menu">
+                      Cerca
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="vertical-line">
+                    </div>
+                    <img src="img/icon/libreria.svg" alt="">
+                    <span class="hidden-xs menu">
+                      La tua libreria
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="playlist-container hidden-xs padding-l20 ">
+              <div class="playlist-title-section">
+                <span class="font-white">
+                  PLAYLIST
+                </span>
+              </div>
+              <div class="crea-pl-container over-white">
+                <i class="fa fa-plus-square" aria-hidden="true">
+                </i>
+                <span class="">
+                  Crea Playlist
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- end side-bar top logo/nav menu/ playlist button -->
+          <!-- playlist with scroll -->
+          <ul class="scroll-list padding-l20 hidden-xs">
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+            <li class="over-white">
+              Nome Playlist
+            </li>
+          </ul>
+          <!-- end playlist with scroll -->
+          <!-- install app and user name -->
+          <div class="side-bottom">
+            <div class="user-container padding-l20 ">
+              <div class="download-app">
+                <div class="download ">
+                  <a href="#" class=" link-downl">
+                    <img src="img/icon/download.svg" alt="">
+                    <span class="hidden-xs over-white">
+                      Install app
+                    </span>
+                  </a>
+                </div>
+                <div class="user">
+                  <div class="user-img">
+                    <img src="img/icon/profile.svg" alt="">
+                    <span class="font-white hidden-xs">
+                      John Doe
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- install app and user name -->
+        </section>
+        <!-- END SIDE-BAR SECTION -->
+        <!-- CENTRAL PAGE SECTION -->
+        <section class="box-r float-l hidden-height90 bg-color-blackrussian">
+          <header class="fixed hidden-height90">
+            <div class="button-upgrade-container float-r">
+              <a href="#" class="button font-white">
+                EFFETTUA L' UPGRADE
+              </a>
+            </div>
+          </header>
+          <nav class="flex">
+            <ul>
+              <li>
+                <a href="#">
+                  IN EVIDENZA
+                </a>
+                <hr>
+              </li>
+              <li>
+                <a href="#">
+                  PODCAST
+                </a>
+                <hr>
+              </li>
+              <li>
+                <a href="#">
+                  CLASSIFICHE
+                </a>
+                <hr>
+              </li>
+              <li>
+                <a href="#">
+                  GENERI E MOOD
+                </a>
+                <hr>
+              </li>
+              <li>
+                <a href="#">
+                  NUOVE USCITE
+                </a>
+                <hr>
+              </li>
+              <li>
+                <a href="#">
+                  SCOPRI
+                </a>
+                <hr>
+              </li>
+            </ul>
+          </nav>
+          <!-- albums row recently played -->
+          <div class="margin-main-titl">
+            <span class="main-title font-white">
+              Recently played
+            </span>
+          </div>
+          <div class="flex albums-hr">
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/metal_lifting.jpg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Heavy Metal
+                </a>
+                <div class="label-subtitle ">
+                  <a href="#" class="subtitle over-underline">
+                    Subtitle
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/stranger.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Stranger Things, Vol.1 (a Netflix Original Series Soundtrack)
+                </a>
+                <div class="label-subtitle ">
+                  <a href="#" class="subtitle over-underline">
+                    Kyle Dixon & Michael Stein
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/aquietplace.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  A quiet place
+                </a>
+                <div class="label-subtitle">
+                  <a href="#" class="subtitle over-underline">
+                    Subtitle
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/split.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Split
+                </a>
+                <div class="label-subtitle ">
+                  <a href="#" class="subtitle over-underline">
+                    Subtitle
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/cure.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  A cure for wellness
+                </a>
+                <div class="label-subtitle ">
+                  <a href="#" class="subtitle over-underline">
+                    Subtitle
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/sinister.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Sinister
+                </a>
+                <div class="label-subtitle ">
+                  <a href="#" class="subtitle over-underline">
+                    Subtitle
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end albums row recently played -->
+          <!-- albums row create for user -->
+          <div class="margin-main-titl">
+            <span class="main-title font-white">
+              Creato per John Doe
+            </span>
+            <br>
+            <span class="subtitle">
+              Piú ascolti, piú accurati saranno i suggerimenti.
+            </span>
+          </div>
+          <div class="flex albums-hr">
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/radar.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Rlease Radar
+                </a>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box">
+                <img src="img/label/mixdaily.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Daily Mix 1
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- end albums row create for user -->
+          <!-- albums row popolar artists -->
+          <div class="margin-main-titl">
+            <span class="main-title font-white">
+              Artisti piú popolari
+            </span>
+            <br>
+            <span class="subtitle">
+              Piú ascolti, piú accurati saranno i suggerimenti.
+            </span>
+          </div>
+          <div class="flex albums-hr">
+            <div class="img-album-container">
+              <div class="img-box circular-img">
+                <img src="img/label/youg.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Lana del Rey
+                </a>
+              </div>
+            </div>
+            <div class="img-album-container">
+              <div class="img-box circular-img">
+                <img src="img/label/einaudi.jpeg" alt="">
+              </div>
+              <div class="label-title-box text-center">
+                <a href="#" class="font-white over-underline">
+                  Einaudi
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- end albums row popolar artists -->
+        </section>
+        <!-- END CENTRAL PAGE SECTION -->
+      </main>
+      <!-- END CONTAINER MAIN PAGE -->
+      <!-- FOOTER -->
+      <footer class="bg-color-gray flex footer-row">
+        <!-- left footer section -->
+        <section class="footer-col-lateral flex footer-sx">
+          <div class="album-mini-img hidden-xs">
+            <img src="img/label/sinister.jpeg" alt="">
+          </div>
+          <div class="box-titl-minialbum">
+            <span class="title-mini-album font-white over-underline">
+              Sinister
+            </span>
+            <div class="subtitle-mini-album over-underline">
+              <span >
+                Brano Nome
+              </span>
+            </div>
+          </div>
+          <div class=" flex icon-folder-like">
+            <span class="over-white icon-foot-left">
+              <i class="fa fa-heart-o" aria-hidden="true">
+              </i>
+            </span>
+            <span class="over-white icon-foot-left">
+              <i class="fa fa-folder-o" aria-hidden="true">
+              </i>
+            </span>
+          </div>
+        </section>
+        <!-- end left footer section -->
+        <!--  central footer section -->
+        <section class="footer-col-center ">
+          <div class="player ">
+            <ul class="flex player-cmd">
+              <li class="over-white">
+                <i class="fa fa-random" aria-hidden="true">
+                </i>
+              </li>
+              <li class="over-white">
+                <i class="fa fa-step-backward" aria-hidden="true">
+                </i>
+              </li>
+              <li class="play-resize">
+                <i class="fa fa-play-circle-o" aria-hidden="true">
+                </i>
+              </li>
+              <li class="over-white">
+                <i class="fa fa-step-forward" aria-hidden="true">
+                </i>
+              </li>
+              <li class="over-white">
+                <i class="fa fa-repeat" aria-hidden="true">
+                </i>
+              </li>
+            </ul>
+            <div class="flex play-bar-row hidden-underxs">
+              <div class="time font-white">
+                <span>
+                  0:25
+                </span>
+              </div>
+              <div class="play-bar">
+                <div class="play-position-20perc">
+                  <div class="playhead">
+                  </div>
+                </div>
+              </div>
+              <div class="time font-white hidden-xs">
+                <span>
+                  4:35
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end central footer section -->
+        <!-- right footer section -->
+        <section class="footer-col-lateral footer-dx">
+          <div class="flex controllers">
+            <ul class="flex">
+              <li class="over-white">
+                <i class="fa fa-list" aria-hidden="true">
+                </i>
+              </li>
+              <li class="over-white">
+                <i class="fa fa-desktop" aria-hidden="true">
+                </i>
+              </li>
+              <li class="over-white">
+                <i class="fa fa-volume-up" aria-hidden="true">
+                </i>
+              </li>
+            </ul>
+            <div class="volume-bar hidden-md hidden-sm hidden-xs">
+              <div class="volume-position-20perc">
+                <div class="vol-head">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- end right footer section -->
+      </footer>
+      <!-- END FOOTER -->
+    </div>
+    <!-- END TOTAL PAGE -->
+  </body>
+</html>
