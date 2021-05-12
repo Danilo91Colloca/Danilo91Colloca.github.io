@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- google font-->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" 
+      rel="stylesheet">
+      <!-- fontsAwesome-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+      crossorigin="anonymous" />
+      <!-- css -->
+      <link rel="stylesheet" href="dist/app.css">
+      <title>Document</title>
+      <!-- VUEJS-->
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  </head>
+  <body>
+    <!--WARNING VUEJS-->
+    <div id="app">
+      <!-- CONTACTS -->
+      <div id="home" class="overHead-section">
+        <div class="overHead-container">
+          <div class="boxL">
+            <div class="workdays" v-for="data in rotation">
+              <i :class="data.faIcon"></i>
+              <span>
+                Open Hours:
+              </span>
+              <div class="workdays-data" v-for="(element, key, index) in data.dayHour">
+                <span :class="dashClass(index)">
+                  {{element}}
+                </span>
+              </div>                     
+            </div>
+          </div>
+          <div class="boxR">
+            <div class="contacts">
+              <div class="contacts-data" v-for="element in contacts">
+                <i :class="element.faIcon"></i>
+                <span >
+                  {{element.contact}}
+                </span>
+              </div>
+            </div>
+            <div class="social" v-for="data in socialContacts">
+              <a :href="data.pageLink" :class="data.socialIcon"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/CONTACTS-->
+      <!--NAVBAR STICKY-->
+      <nav :class="{scrollNav : scrollPosition > 200}">
+        <div class="navBar">
+          <a class="logo" href="#home">
+            <!-- logo Snippet-->
+            <div class="barndLogo">
+              <div class="brandLogo-part1">
+                <span class="text-brandpart1">
+                  NEX
+                </span>
+              </div>                
+              <span class="brandLogo-part2">
+                GEN
+              </span>
+            </div>
+            <!-- /logo Snippet-->
+          </a>
+          <div class="navBar-R">
+            <div class="menuNav-box"  v-for="element in navBar" >
+              <ul class="navUl" >
+                <li :class="item" v-for="item in element.navMenu">
+                 <a :href="item.link"> 
+                   {{item.menu}}
+                  </a>
+                </li>
+              </ul>
+              <div class="userIcon">
+                <i :class="element.userIcon"></i>
+              </div>
+            </div>
+            <a class="button-solid" href="#form">
+              <span>GET IN TOUCH</span>
+            </a>
+          </div>                    
+        </div>
+
+      </nav>
+      <!-- / navbar-->
+      <!--NAV IN JUMBOTRON-->
+      <div  class="navAndJumbotron-section">   
+        <div class="overbox-opacity">
+          
+          <!-- jumboMain-->
+          <div class="jumbotronTextButton-container">
+            <div class="text-box">
+              <h1>
+                Financial Risk
+              </h1>
+              <p>
+                The right outcomes depend on continuous rigor in governance,
+                models, and processes across the finance function.
+              </p>
+            </div>
+            <div class="button-box">
+              <a class="button-solid" href="#form">
+                <span>
+                  GET IN TOUCH
+                </span>
+              </a>
+              <a class="button-transparent" href="#videoInfo">
+                <span>
+                  READ MORE
+                </span>
+              </a>
+            </div>            
+          </div>
+          <!-- / jumboMain-->
+        </div>          
+      </div>
+      <!-- / NAV IN JUMBOTRON-->
+      <!--INTRO VIDEO SECTION-->
+      <div id="videoInfo" class="introVideo-section">
+        <div class="pagecenter-videoSection">
+          <!-- textMov-block-->
+          <div class="textMov-block">
+            <div class="top-title">
+              <span>
+                INTRODUCTION VIDEO
+              </span>
+            </div>
+            <h1 class="title">
+              Advisory <span class="title-wordColorChange">Performance</span>
+            </h1>
+            <p class="summary">
+              Financial executive need to review their strategies, operating  models and capabilities so that their areas can generate sound information for better decison making.
+            </p>
+            <div class="video-preview">
+              <div class="overbox-opacity">
+                <div class="playLink">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / textMov-block-->
+        </div>
+      </div>
+      <!--INTRO VIDEO SECTION-->
+      <!-- RESULT SECTION-->
+      <div class="result-section">
+        <div class="overbox-opacity">
+          <!-- textResult-block-->
+          <div class="textResult-block">
+            <div class="top-title">
+              <span>
+                WHAT ARE WE DOING
+              </span>
+            </div>
+            <h1 class="title">
+              <span class="title-wordColorChange">Result</span> in Numbers
+            </h1>
+            <div class="result-box-container">
+              <div class="box-result">
+                <div class="result" v-for="number in dynamicResults" >
+                  {{number.number}}
+                 </div>
+              </div>
+              <div class="box-sector" >
+                <div class="sector" @mouseover="numGenerator(result.number, index)" 
+                v-for="(result, index) in results">
+                  {{result.sector}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / textResult-block-->
+        </div>
+      </div>
+      <!-- RESULT SECTION-->
+      <!--AREAS SERVICES SECTION-->
+      <div id="areaServices" class="area-services-section">
+        <div class="centralBox">
+          <div class="titleButtonSection">
+            <div class="textServices-block">
+              <div class="top-title">
+                <span>
+                  OUR BUSINESS AREAS
+                </span>
+              </div>
+              <h1 class="title">
+                Excellence in <span class="title-wordColorChange">Services</span>
+              </h1>
+              <p class="summary">
+                We are leaders in providind consultancy services with a seto of cutting-edge technologies and a team of experienced and renowed professionals. These are some options that you can hire.
+              </p>
+            </div>
+            <div class="button-box">
+              <a class="button-transparent" href="#home">
+                <span>
+                  SEE ALL
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="services-box-container">
+            <div class="services-box" v-for="data in services">
+              <div class="servicesSymbols">
+                <div class="iconSymbol">
+                  <i :class="data.symbol"></i>
+                </div>
+                <div class="iconArrow">
+                  <a href="#home" :class="data.arrow"></a>
+                </div>
+              </div>
+              <div class="text">
+                <h4>
+                  {{data.title}}
+                </h4>
+                <span>
+                  {{data.text}}
+                </span>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <!--AREAS SERVICES SECTION-->
+      <!--TEAM SECTION-->
+      <div  id="areaTeam" class="team-section">
+        <!--central box-->
+        <div class="central-box">
+          <!-- text and team container -->
+          <div class="textAndTeam-container">
+            <div class="textTeam-block">
+              <div class="top-title">
+                <span>
+                  WE LIKE WHAT WE DO
+                </span>
+              </div>
+              <h1 class="title">
+                <span class="title-wordColorChange">Team</span> of Experts
+              </h1>
+              <p class="summary">
+                Ethics and integrity are the bases on which our professionals build their careers. They are fundamentals become daily attitudes.
+              </p>
+            </div>
+            <!--Team Container-->
+            <div class="team-container">
+              <!--team box data from vue-->
+              <div class="team-box" v-for="dataTeam in teamPersons">
+                <div class="photo">
+                  <img :src="dataTeam.photo" alt="">
+                </div>
+                <div class="data">
+                  <div class="name">
+                    {{dataTeam.name}} {{dataTeam.surname}}
+                  </div>
+                  <div class="role">
+                    {{dataTeam.role}}
+                  </div>
+                  <div class="social-contacts">
+                    <a :href="dataTeam.contacts.fb" :class="dataTeam.contacts.fbIcon"></a>
+                    <a :href="dataTeam.contacts.twitt" :class="dataTeam.contacts.twittIcon"></a>
+                    <a :href="dataTeam.contacts.linked" :class="dataTeam.contacts.linkedIcon"></a>
+                  </div>
+                </div>
+              </div>
+              <!-- / team box data from vue-->
+            </div>
+            <!--Team Container-->
+          </div>
+          <!-- /text and team container -->
+          <!--president speech-->
+          <div class="testimonial-container">
+            <h2>
+              President Speech
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut lacinia diam. 
+            </p>
+            <p>
+              Vivamus efficitur et est quis posuere. Nulla sollicitudin vulputate dui, id pretium tortor congue eu. Integer aliquet justo eu quam volupat ullamcorper.
+            </p>
+            <p>
+              Duis ut hendrerit mautis. Phasellus faucibus ut enim vel tincidunt. Nunc venenatis a dui et laoreet.
+            </p>
+            <h4>
+              T.Johnson
+            </h4>
+            <div class="quote">
+              <i class="fas fa-quote-right"></i>
+            </div>
+
+          </div>
+          <!--president speech-->
+        </div>
+        <!--/central box-->
+      </div>
+      <!--/ TEAM SECTION-->
+      <!-- LATEST NEWS SECTION-->
+      <div id="areaNews" class="news-section">
+        <!-- central box-->
+        <div class="central-box">
+          <!--title text section-->
+          <div class="titleButtonSection">
+            <div class="textServices-block">
+              <div class="top-title">
+                <span>
+                  OUR EDITORIAL CONTENT
+                </span>
+              </div>
+              <h1 class="title">
+                Latest <span class="title-wordColorChange">News</span>
+              </h1>
+              <p class="summary">
+                Every week we publixh content about what is best in the business world.
+              </p>
+            </div>
+            <a class="button-solid" href="#home">
+              <span>
+                SEE ALL
+              </span>
+            </a>
+          </div>
+          <!-- / title text section-->
+          <!-- News box section-->
+          <div class="boxNews-container">
+            <div class="box-news" v-for="data in news">
+              <img :src="data.image" alt="">
+              <div class="overbox-opacity">
+                <div class="text">
+                  <h3>
+                    {{data.textNews}}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / News box section-->
+        </div>
+        <!-- / central box-->
+      </div>
+      <!-- /LATEST NEWS SECTION-->
+      <!--SUBSCRIBE SECTION-->
+      <div class="subscribe-section">
+        <div class="central-box">
+          <div class="textTitle-section">
+            <div class="textTeam-block">
+              <div class="top-title">
+                <span>
+                  NEWSLETTER
+                </span>
+              </div>
+              <h1 class="title">
+                <span class="title-wordColorChange">Know</span> First
+              </h1>
+              <p class="summary">
+                Follow closely and receive content about our company and the news of the current maret.
+              </p>
+            </div>
+          </div>
+          <div class="subscribeInput-section">
+            <div class="input-container st">
+              <input type="text" placeholder="Name" 
+              v-model="subscriptName">
+            </div>  
+            <div class="input-container nd">  
+              <input type="text" placeholder="Email" v-model="subscriptMail">
+            </div>
+            <div class="button-solid" @click="postSubscription">
+              <span>
+                SUBSCRIBE
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/SUBSCRIBE SECTION-->
+      <!--FORM SECTION-->
+      <div id="form" class="form-section">
+        <div class="central-box">
+          <!-- containerL-->
+          <div class="containerL">
+            <div class="textTitle-section">
+              <div class="textTeam-block">
+                <div class="top-title">
+                  <span>
+                    SEND A MESSAGE
+                  </span>
+                </div>
+                <h1 class="title">
+                  Get in <span class="title-wordColorChange">Touch</span> 
+                </h1>
+                <p class="summary">
+                  We will respond to your message as soon as possible.
+                </p>
+              </div>
+            </div>
+            <div class="form-container">
+              <div class="input-row">
+                <div class="input-withIcon">
+                  <input type="text" placeholder="Name" v-model="userName">
+                  <img src="images/image-1.png" alt="">
+                </div>
+                <input type="text" placeholder="Email" v-model="userMail">
+              </div>
+              <div class="input-row">
+                <input type="text" placeholder="Phone" v-model="userPhone">
+
+                <div class="input-withIcon" @click="menuVisible('moreInfo')">
+                  <input type="text" placeholder="More info" :value="userMoreInfo">
+                  <i class="fas fa-chevron-down"></i>
+                  <div class="dropDownMenu" 
+                  v-if="isMenuVisible('moreInfo')">
+                    <ul>
+                      <li v-for="element in moreInfo" @click="userSelect(element)">
+                        {{element}}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="input-message">
+                <textarea name="message" class="message" cols="30" rows="10" placeholder="Message" v-model="userMsg"></textarea>
+              </div>
+            </div>
+            <div class="button-solid" @click="postFormMsg()">
+              <span>
+                SEND
+              </span>
+            </div>
+          </div>
+          <!-- /containerL-->
+          <!-- containerR-->
+          <div class="containerR">
+            <div class="text">
+              <h3>
+                Example Inc.
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <p>
+                Praesent diam lacus, dapibus sed imperdiet consectetur.
+              </p>
+            </div>
+            <div class="contacts" v-for="element in contacts">
+              <i :class="element.faIcon"></i>
+              <span>
+                {{element.contact}}
+              </span>
+            </div>
+            <div class="address">
+              <i :class="address.faIcon"></i>
+              <span>
+                {{address.address}}
+              </span>
+            </div>
+            <div class="maplink">
+              <a class="button-transparent" :href="maps" >
+                  VIEW MAP
+              </a>
+            </div>
+          </div>
+          <!-- / containerR-->
+        </div>
+      </div>
+      <!--/FORM SECTION-->
+      <!--FOOTER & COPYRIGHT-->
+      <div class="footer-copyr-section">
+        <div class="central-box">
+          <div class="footer-card brand">
+            <!-- logo Snippet-->
+            <a href="#home" class="logo">
+              <div class="barndLogo">
+                <div class="brandLogo-part1">
+                  <span class="text-brandpart1">
+                    NEX
+                  </span>
+                </div>                
+                <span class="brandLogo-part2">
+                  GEN
+                </span>
+              </div>
+            </a>
+            <!-- /logo Snippet-->
+            <div class="text-container">
+              <p class="text">
+                A functional HTML Template for Corporate & Business.
+              </p>
+            </div>
+            <div class="contacts-box" v-for="data in contacts">
+              <i :class="data.faIcon"></i>
+              <a>
+                {{data.contact}}
+              </a>
+            </div>
+            <div class="address-box">
+              <i :class="address.faIcon"></i>
+              <a href="" >
+                {{address.address}}
+              </a>
+            </div>
+            <div class="button-box">
+              <a class="button-transparent" href="#form">
+                <span>
+                  GET IN TOUCH
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="footer-card " v-for="element in listServices">
+            <div class="label-box">
+              <span class="label-style">
+                {{element.label}}
+              </span>
+            </div>
+            <ul>
+              <li v-for="item in element.item">
+                <a href="">
+                  {{item}}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright-section">
+          <div class="central-box">
+            <div class="privacy-terms">
+              <span>
+                Enjoy the low price. We are tracking any intention of privacy.
+              </span>
+            </div>
+            <div class="copyright">
+              <span>
+                &copy; 2020 NEXGEN is Proudly Powered by 
+                <span class="changeColor">
+                  Condings
+                </span>.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!--FOOTER & COPYRIGHT-->
+    </div>
+    <!-- /WARNING VUEJS-->
+    <script src="js/script.js"></script>
+  </body>
+</html>

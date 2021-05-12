@@ -1,0 +1,124 @@
+//JUMBOTRON BG IMMAGE
+@mixin jumbotronImg {
+  background-image : url("../images/bg-2.jpg");
+  background-position : top;
+  background-size : cover;
+  background-repeat : no-repeat;
+}
+
+//VIDEO BLOCK BG-IMG
+@mixin moviePreview {
+  background-image : url("../images/video-1.jpg");
+  background-position : center;
+  background-size : cover;
+  background-repeat : no-repeat;
+}
+
+//RESULT SECTION BG-img
+@mixin resultImg {
+  background-image : url("../images/bg-4.jpg");
+  background-position : center;
+  background-size : cover;
+  background-repeat : no-repeat;
+}
+//NEWS SECTION BG BOX IMG
+@mixin bgPosition {
+  background-position : center;
+  background-size : cover;
+  background-repeat : no-repeat;
+}
+
+//FOOTER BG
+@mixin  bgFooter {
+  background-image : url("../images/bg-7.jpg");
+  background-repeat : no-repeat;
+  background-position : center;
+  background-size : cover;
+  
+}
+
+//BRAND NAME
+$brandLetterSpacing : 5px;
+$brandFontSize : 15px;
+$brandWeight : 900;
+@mixin brandName-container-part1 {
+  display : inline-block;
+  background-color : $brandColorTransparency;
+  padding-left : 25px ;
+  border-top-left-radius : 30px;
+  border-bottom-left-radius : 30px;
+  line-height: 40px;
+}
+@mixin brandName-part1 {
+  text-align : right;
+  color : $brandColorLight;   
+  font-weight : $brandWeight;
+  letter-spacing : $brandLetterSpacing;
+  font-size : $brandFontSize;
+}
+@mixin brandName-part2 {
+  color : $white;
+  font-weight : $brandWeight;
+  letter-spacing : $brandLetterSpacing;
+  font-size : $brandFontSize;
+}
+
+//SOLID BUTTONS
+@mixin buttonSolid {
+  text-decoration : none; 
+  background-color : $brandColorDark;
+  color : $white;
+  padding : 10px;
+  border-radius : 5px;
+  font-size: 15px;
+  &:hover {
+    cursor: pointer;
+    background-color : $brandColorLight;
+  }
+}
+//TRANSPARENT BUTTON
+@mixin buttonTransparent {
+  text-decoration : none; 
+  background-color : transparent;
+  border : 1px solid $brandColorDark;
+  color : $white;
+  padding : 10px;
+  border-radius : 5px;
+  font-size: 15px;
+  &:hover {
+    cursor: pointer;
+    background-color : $brandColorLight;
+  }
+}
+@mixin buttonTransparent2 {
+  text-decoration : none; 
+  background-color : transparent;
+  border : 1px solid $brandColorDark;
+  color : $brandColorDark;
+  padding : 10px;
+  border-radius : 5px;
+  font-size: 15px;
+  &:hover {
+    cursor: pointer;
+    color : $white;
+    background-color : $brandColorLight;
+  }
+}
+
+//top-title 
+@mixin topTitle {
+  color : $brandColorLight;
+  font-weight : 600;
+}
+//title change bluelagoon
+@mixin changeWordColor {
+  color : $brandColorDark;
+  background-color : $brandColorTransparency;
+  border-radius : 5px;
+}
+//title change color white e bg bluelagoon-strong
+@mixin changeWordColor2 {
+  color : $white;
+  background-color : $brandColorTransparency;
+  border-radius : 5px;
+}

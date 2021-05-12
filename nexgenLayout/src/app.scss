@@ -1,0 +1,925 @@
+@import  "partials/_commons";
+@import "partials/_colors";
+@import "partials/_bg-brand-titles";
+#app {
+  .overHead-section { 
+    @include widthSectionParam;
+    height : 45px;
+    background-color : $cyanBlue;
+    .overHead-container {
+      @include pageCenter;
+      @include flex;
+      color : $whiteDark;
+      line-height : 45px;
+      justify-content : space-between;
+      padding : 0px 15px;
+      .boxL {
+        .workdays {
+          i {
+            margin-right : 8px;
+          }
+          &-data {
+            display : inline-block;
+            &-dashed::before {
+              content : '-';
+              margin-left: 4px;
+            }                  
+          } 
+          &:hover {
+            color : $brandColorLight;
+            cursor : pointer;
+          }                
+        }
+      }
+      .boxR {
+        @include flex;
+        .contacts {
+          @include flex;                
+          &-data {
+            cursor : pointer;
+            margin-right : 35px;
+            i {
+              margin-right : 5px;
+            }
+            &:hover {
+              color : $brandColorLight;
+            }
+          }
+        }
+        .social {
+          a {
+            cursor: pointer;
+            color : $white;
+            text-decoration : none;
+            margin-left : 35px;
+            &:hover {
+              color : $brandColorLight;
+              transform: scale(1.1);
+            }
+          }
+        }   
+      }// end boxR
+    } //end overHead-container
+  }//end overHead
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+  //!!!WARNING nav-scrolling bg don't remove!!!
+  .scrollNav {
+    background-color : $cyanBlue; 
+  } //!!!WARNING nav-scrolling bg don't remove!!!
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+  nav {
+    @include widthSectionParam;
+    float: left;
+    position : sticky;
+    padding : 20px 15px;
+    height : 80px;
+    top : 0px;
+    z-index : 100;
+    .navBar {
+      @include pageCenter;
+      @include flex;
+      justify-content : space-between;
+      align-items : center;
+      .logo {
+        text-decoration : none;
+        .brandLogo {
+          &-part1 {
+            @include brandName-container-part1;
+            .text-brandpart1 {
+              @include brandName-part1;
+            }
+          }
+          &-part2 {
+            @include brandName-part2;
+          } 
+        }
+      }
+      &-R {
+        @include flex;
+        align-items: center;
+        .menuNav-box {
+          @include flex;
+          font-size: 16px;
+          .navUl {
+            @include flex;
+            li a{
+              text-transform : uppercase;
+              margin : 0px 25px;
+              color : $white;
+              text-decoration : none;
+              &:hover {
+                cursor : pointer;
+                color : $brandColorLight;
+              }
+            }
+          }
+          .userIcon {
+            margin-right : 25px;
+            font-size: 20px;
+            color : $white;
+            &:hover {
+              cursor : pointer;
+              transform: scale(1.1);
+              color : $brandColorLight;
+            }
+          }
+        }
+        .button-solid {
+          @include buttonSolid;
+        }
+      }        
+    }
+  }
+  //end navBar
+  .navAndJumbotron-section {
+    @include widthSectionParam;
+    height : 920px;
+    position : relative;
+    @include jumbotronImg;
+    .overbox-opacity {
+      @include overBoxOpacitySizer;
+      background-color: $opacity;
+      
+      .jumbotronTextButton-container {
+        position : absolute;
+        top : 50%;
+        left : 50%;
+        transform : translate(-50%, -50%);
+        text-align : center;
+        color : $white;
+        .text-box {
+          width : 700px;
+          margin : 50px;
+          h1 {
+            font-size : 70px;
+            font-weight : bolder;
+            margin : 50px;
+          }
+          p {
+            color : $whiteDark;
+            font-size : 20px;
+          }
+        }
+        .button-box {
+          .button-solid {
+            display: inline-block;
+            @include buttonSolid;
+            margin-right : 15px;
+          }
+          .button-transparent {
+            display: inline-block;
+            @include buttonTransparent;
+          }
+        } 
+      }
+    } //end overbox-opacity
+  }//end navAndJumbotron-box
+  .introVideo-section {
+    @include widthSectionParam;
+    height : 900px;
+    background-color : $white;
+    .pagecenter-videoSection {
+      position : relative;
+      @include pageCenter;
+      height : 100%;
+      .textMov-block {
+        @include centerAbsolute;
+        width : 900px;
+        text-align: center;
+        .top-title {
+          @include topTitle;
+          margin-bottom : 30px;
+        }
+        .title {
+          margin-bottom : 30px;
+          color : $cyanBlue;
+          font-size: 40px;
+          &-wordColorChange {
+            @include changeWordColor;
+            padding : 5px;
+          }
+        }
+        .summary {
+          color : $whiteDark;
+          margin-bottom : 80px;
+          padding : 0px 40px;
+        }
+        .video-preview {
+          position: relative;
+          width : 900px;
+          height : 400px;
+          @include moviePreview;
+          .overbox-opacity {
+            @include overBoxOpacitySizer;
+            background-color : $opacity;
+            .playLink {
+              @include centerAbsolute;
+              font-size : 70px;
+              color : $whiteTransparency;
+              text-shadow : 0px -8px 0px $brandColorTransparency;
+              &:hover {
+                font-size : 80px;
+              }
+            }
+          }
+        }
+      }//end text-block
+    }//end pagecenter-videoSection
+  }//end introVideo-box
+  .result-section {
+    @include widthSectionParam;
+    @include resultImg;
+    height : 580px;
+    position : relative;
+    .overbox-opacity {
+      @include overBoxOpacitySizer;
+      background-color : $opacity;
+      .textResult-block {
+        @include centerAbsolute;
+        @include pageCenter;
+        text-align: center;
+        .top-title {
+          @include topTitle;
+          margin-bottom : 30px;
+        }
+        .title {
+          margin-bottom : 80px;
+          color : $white;
+          font-size: 40px;
+          &-wordColorChange {
+            @include changeWordColor2;
+            padding : 5px;
+          }
+        }
+        .result-box-container {
+          @include clearfix;
+          @include pageCenter;
+          .box-result {
+            .result {
+              color : $brandColorLight;
+              font-size : 35px;
+              font-weight : bolder;
+              margin-bottom : 30px;
+              float: left;
+              width : calc((100% / 12) * 3);
+            }
+          }
+          .box-sector {
+            .sector {
+              color : $white;
+              font-size : 20px;
+              font-weight : bolder;
+              text-transform : capitalize;
+              float: left;
+              width : calc((100% / 12) * 3);
+              padding : 50px 0px;
+            }
+          }
+        }
+      }// end textResult-block
+    }// end overbox-opacity 
+  }// end result-section
+  .area-services-section {
+    @include widthSectionParam;
+    position : relative;
+    height : 1090px;
+    background-color : $bg-woodsmoke; 
+    .centralBox {
+      @include centerAbsolute;
+      .titleButtonSection {
+        @include pageCenter;
+        @include flex;
+        justify-content : space-between;
+        margin-bottom : 30px;
+        .textServices-block {
+          width : 820px;
+          .top-title {
+            @include topTitle;
+            margin-bottom : 30px;
+          }
+          .title {
+            margin-bottom : 30px;
+            color : $white;
+            font-size: 40px;
+            &-wordColorChange {
+              @include changeWordColor2;
+              padding : 5px;
+            }
+          }
+          .summary {
+            color : $white;
+          }
+        }//end text-block
+        .button-box {
+          width: calc(100% - 820px);
+          position : relative;
+          .button-transparent {
+            text-decoration : none;
+            @include buttonTransparent;
+            width : 120px;
+            position : absolute;
+            bottom : 0;
+            right : 0;
+            text-align : center;
+          }
+        }
+      }
+      .services-box-container {
+        @include flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .services-box {
+          width : 360px;
+          height : 270px;
+          background-color : $blueMagenta;
+          border-radius : 8px;
+          margin-bottom : 50px;
+          padding : 40px;
+          .servicesSymbols {
+            @include flex;
+            justify-content : space-between;
+            margin-bottom : 20px;
+            .iconSymbol {
+              color : $brandColorLight;
+              font-size : 30px;
+            }
+            .iconArrow a{
+              text-decoration : none;
+              color : $brandColorLight;
+              font-size : 18px;
+              &:hover {
+                transform : scale(1.1);
+              }
+            }
+          }
+          .text {
+            color : $white;
+            h4 {
+              margin-bottom : 20px;
+              text-transform : capitalize;
+            }
+            span {
+              font-weight : 100;
+            }
+          }
+          &:hover {
+            transform : scale(1.1);
+            .iconSymbol {
+              color : $white;
+            }
+            .iconArrow a {
+              color : $white;
+              background-color : $brandColorDark;
+              text-align : center;
+              vertical-align : middle;
+              border-radius : 50%;
+              padding : 5px;
+              line-height : 16px;
+            }
+          }
+        }//end services box
+      } //end services box container
+    } // end central box
+  }// end area services section
+  .team-section {
+    @include widthSectionParam;
+    height : 900px;
+    background-color : $white;
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    .central-box {
+      @include pageCenter;
+      position : relative;
+      .textAndTeam-container {
+        width : 70%;
+        height : 100%;
+        .textTeam-block {
+          .top-title {
+            @include topTitle;
+            margin-bottom : 30px;
+          }
+          .title {
+            margin-bottom : 30px;
+            color : $cyanBlue;
+            font-size : 35px;
+            &-wordColorChange {
+              @include changeWordColor;
+              padding : 5px;
+            }
+          }
+          .summary {
+            width : 750px;
+            font-size : 20px;
+            color : $whiteDark;
+            margin-bottom : 80px;
+          }
+        }//end text-block
+        .team-container {
+          @include flex;
+          flex-wrap : wrap;
+          justify-content : space-between;
+          .team-box {
+            @include flex;
+            margin-bottom : 50px;
+            width : 400px;
+            .photo {
+              width : 130px;
+              margin-right : 25px;
+              img {
+                width : 100%;
+                border-radius : 8px;
+              }
+            }
+            .data {
+              padding : 10px;
+              .name {
+                color : $cyanBlue;
+                font-weight : bold;
+                font-size : 28px;
+                margin-bottom : 20px;
+    
+              }
+              .role {
+                color : $whiteDark;
+                font-size : 16px;
+                margin-bottom : 20px;
+              }
+              .social-contacts {
+                color : $brandColorDark;
+                a {
+                  display: inline-block;
+                  color : $brandColorDark;
+                  text-decoration : none;
+                  margin-right : 5px;
+                  padding : 0px 15px;
+                  line-height : 41.5px;
+                  border-radius : 50%;
+                  background-color : $brandColorTransparency;
+                  &:hover {
+                    color : $brandColorLight;
+                    background-color : $brandColorDark;
+
+                    transform : scale(1.1);
+                  }
+                }
+              }
+            } // end Data
+          } // end team box
+        }// end team container
+      }
+      
+      .testimonial-container {
+        width : 30%;
+        height : 500px;
+        background-color : $brandColorLight;
+        border-radius : 4px;
+        position : absolute;
+        right : 0;
+        bottom : 50px;
+        color : $white;
+        padding : 35px;
+        @include clearfix;
+        h2, p {
+          margin-bottom : 30px;
+        }
+        p {
+          width : 290px;
+          color : $whiteDark;
+        }
+        .quote {
+          float : right;
+          transform : translateY(-100%);
+          font-size : 30px;
+          vertical-align : middle;
+          color : $brandColorDark;
+        }
+      }
+    }// end central box
+    
+  }// end team section
+  .news-section {
+    @include widthSectionParam;
+    height : 830px;
+    position : relative;
+    background-color : $yellowOcre;
+    @include flex;
+    justify-content : center;
+    align-items : center;
+    .central-box {
+      @include pageCenter;
+      .titleButtonSection {
+        position : relative;
+        @include flex;
+        justify-content : space-between;
+        margin-bottom : 50px;
+        .textServices-block {
+          width : 820px;
+          .top-title {
+            @include topTitle;
+            margin-bottom : 30px;
+          }
+          .title {
+            margin-bottom : 30px;
+            color : $cyanBlue;
+            font-size: 40px;
+            &-wordColorChange {
+              @include changeWordColor;
+              padding : 5px;
+            }
+          }
+          .summary {
+            color : $whiteDark;
+          }
+        }//end text-block
+        .button-solid {
+          @include buttonSolid;
+          width : 100px;
+          position : absolute;
+          bottom : 0;
+          right : 0;
+          text-align : center;
+        }
+      } // end title button section
+      .boxNews-container {
+        @include flex;
+        justify-content : space-between;
+        .box-news {
+          width : 360px;
+          height : 360px;
+          border-radius : 8px;
+          position : relative;
+          img {
+            width : 100%;
+            height : 100%;
+            border-radius: 8px;
+            position: absolute;
+          }
+          .overbox-opacity{
+            @include overBoxOpacitySizer;
+            background-color : $opacity;
+            border-radius : 8px; 
+            padding : 20px;
+            position: absolute;
+            .text {
+              width : 200px;
+              color : $white;
+              text-align : center;
+              position : absolute; 
+              bottom : 30px;
+              left : 50%;
+              transform : translateX(-50%)
+            }
+          }
+        }
+      }//end boxNews-container
+    }//end central box
+  } // end news section
+  .subscribe-section {
+    @include widthSectionParam;
+    position : relative;
+    height : 460px;
+    background-color : $bg-woodsmoke;
+    .central-box {
+      @include centerAbsolute;
+      @include flex;
+      justify-content : space-between;
+      align-items : center;
+      width : 950px;
+      .textTitle-section {
+        width : 50%;
+        .top-title {
+          @include topTitle;
+          margin-bottom : 30px;
+        }
+        .title {
+          margin-bottom : 30px;
+          color : $white;
+          font-size: 40px;
+          &-wordColorChange {
+            @include changeWordColor2;
+            padding : 5px;
+          }
+        }
+        .summary {
+          width : 400px;
+          color : $whiteDark;
+        }
+      }
+      .subscribeInput-section {
+        width : 50%;
+        .input-container {
+          margin-bottom : 20px;
+          input {
+            width : 80%;
+            line-height : 30px;
+            border : none;
+            outline : none;
+            border-radius : 8px;
+            padding-left : 10px;
+            background-color : rgba(90, 86, 86, 0.582);
+            color : $whiteDark;
+          }
+        }
+        .button-solid {
+          @include buttonSolid;
+          width : 140px;
+          bottom : 0;
+          right : 0;
+          text-align : center;
+        }
+      }
+    }// end central box
+
+  }//end subscribe section
+  .form-section {
+    @include widthSectionParam;
+    background-color : $white;
+    height : 850px;
+    @include flex;
+    justify-content : center;
+    align-items : center;
+    .central-box {
+      @include pageCenter;
+      @include flex;
+      .containerL {
+        width : 60%;
+        .textTitle-section {
+          margin-bottom : 60px;
+          .top-title {
+            @include topTitle;
+            margin-bottom : 30px;
+          }
+          .title {
+            margin-bottom : 30px;
+            color : $cyanBlue;
+            font-size: 40px;
+            &-wordColorChange {
+              @include changeWordColor;
+              padding : 5px;
+            }
+          }
+          .summary {
+            width : 400px;
+            color : $whiteDark;
+          }
+        }
+        .form-container {
+          .input-row {
+            input {
+              padding : 0px 25px 0px 10px;
+              width : 320px;
+              line-height : 25px;
+              margin : 0px 15px 15px 0px;
+              background-color : $bg-warmweiss;
+              border : $bg-warmweiss;
+              border-radius : 8px;
+              outline : none;
+            }
+            .input-withIcon {
+              display : inline-block;
+              position : relative;
+              .dropDownMenu {
+                width : 300px;
+                background-color: rgb(126, 125, 125);
+                position : absolute;
+                right : 20px;
+                top : 20px;
+                border-radius : 8px;
+                color : $whiteDark;
+                padding : 10px;
+                li {
+                  margin-bottom : 10px;
+                  cursor : pointer;
+                  &:hover {
+                    color : $brandColorLight;
+                  }
+                }
+              }
+              img {
+                position : absolute;
+                top : 5px;
+                right : 25px;
+                &:hover {
+                  cursor : pointer;
+                }
+              }
+              i {
+                position : absolute;
+                color : $cyanBlue;
+                font-weight : 600;
+                top : 5px;
+                right : 25px;
+                font-size : 13px;
+                &:hover {
+                  cursor : pointer;
+                }
+              }
+            }
+          }
+          .input-message {
+            margin-bottom : 30px;
+            .message {
+              width : 659px;
+              height : 150px;
+              padding : 10px;
+              resize: none;
+              background-color : $bg-warmweiss;
+              border : $bg-warmweiss;
+              border-radius : 8px;
+              outline : none; 
+            }
+          }
+        }
+        .button-solid {
+          @include buttonSolid;
+          width : 100px;
+          bottom : 0;
+          right : 0;
+          text-align : center;
+        }
+      }// end container L
+      .containerR {
+        width : 40%;
+        .text {
+          h3 {
+            font-weight : 500;
+            color : $cyanBlue;
+            margin-bottom : 25px;
+          }
+          p {
+            width : 300px;
+            color : $whiteDark;
+            margin-bottom : 25px;;
+          }
+        }
+        .contacts, 
+        .address {
+          color : $brandColorDark;
+          margin-bottom : 20px;
+          i {
+            display: inline-block;
+            color : $brandColorDark;
+            text-decoration : none;
+            margin-right : 5px;
+            padding : 0px 10px;
+            line-height : 35px;
+            border-radius : 50%;
+            background-color : $brandColorTransparency;
+            
+          }
+          &:hover {
+            i {
+              color : $brandColorLight;
+              background-color : $brandColorDark;
+              cursor: pointer;
+            }
+            span{
+              text-decoration: underline;
+            }
+          }
+        }
+        .maplink {
+          padding-top : 10px;
+          .button-transparent {
+            @include buttonTransparent2;
+            width : 120px;
+            text-decoration : none;
+            text-align : center;
+          }
+        }
+      } // end container R
+    }// end central box
+  } //end form section
+  .footer-copyr-section {
+    position : relative;
+    @include widthSectionParam;
+    height : 710px;
+    @include bgFooter;
+    .central-box {
+      @include pageCenter;
+      @include flex;
+      justify-content : space-between;
+      align-items : center;
+      height : 100%;
+      .footer-card {
+        background-color : $whiteHardTransparency;
+        width : 260px;
+        height : 330px;
+        color : $whiteDark;
+        text-transform : capitalize;
+        border-radius : 8px;
+        padding : 40px;
+        .label-box {
+          margin-bottom : 35px;
+          .label-style {
+            font-weight : 700;
+            font-size : 25px;
+          }
+        }
+        ul {
+          li {
+            margin-bottom : 10px;
+            &::before {
+              font-family : 'Font Awesome 5 Free';
+              font-weight : 900;
+              content : '\f054';
+              margin-right : 10px;
+            }
+            a {
+              color : $whiteDark;
+              text-decoration : none;
+            }
+            &:hover,
+            &:hover a {
+              cursor : pointer;
+              color : $brandColorLight;
+            }
+          }
+        }
+        &.brand {
+          background-color : transparent;
+          padding : 10px;
+          .logo {
+            text-decoration : none;
+            .brandLogo {
+              &-part1 {
+                @include brandName-container-part1;
+                .text-brandpart1 {
+                  @include brandName-part1;
+                }
+              }
+              &-part2 {
+                @include brandName-part2;
+              }  
+            }
+          }
+          .text-container {
+            width : 230px;
+            margin : 25px 0px;
+            .text {
+              color : $whiteDark;
+            }
+          }
+          .contacts-box {
+            color : $whiteDark;
+            text-transform : lowercase;
+            i {
+              margin-right : 15px;
+              margin-bottom : 25px;
+            }
+            a {
+              color : $whiteDark;
+              text-decoration : none;
+            }
+            
+            &:hover,
+            &:hover a{
+              color : $brandColorLight;
+              cursor: pointer;
+            }
+          }
+          .address-box {
+            color : $whiteDark;
+            margin-bottom : 30px;
+            i {
+              margin-right : 15px;
+            }
+            a {
+              color : $whiteDark;
+              text-decoration : none;
+            }
+            &:hover, 
+            &:hover a{
+              color : $brandColorLight;
+            }
+          }
+          .button-box {
+            .button-transparent {
+              @include buttonTransparent;
+              width : 170px;
+              text-align : center;
+            }
+          }
+        } 
+      } //footer cards
+    }//end central box
+    .copyright-section {
+      position : absolute;
+      bottom : 0px; 
+      @include widthSectionParam;
+      height : 90px;
+      background-color : $footerBgColor;
+      .central-box {
+        @include flex;
+        justify-content : space-between;
+        line-height : 90px;
+        color : $whiteDark;
+        font-size : 12px;
+        .changeColor {
+          color : $brandColorLight;
+        }
+      }
+    }
+  } //end footer copyright section
+}//end #app
