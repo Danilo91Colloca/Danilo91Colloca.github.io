@@ -1,0 +1,183 @@
+/*++++++++++++++++++++UTILITY+++++++++++++++++++*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: #8b959e;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+.center-of-dom{
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.display-flex{
+  display: flex;
+}
+.hide {
+  display: none;
+}
+.position-relative {
+  position: relative;
+}
+.font-black{
+  color: #000;
+}
+
+/*+++++++++++++++++++HEADER++++++++++++++++++*/
+
+.header-container{
+  height: 100px;
+  box-shadow: 3px 3px 3px  #8b959e;
+}
+
+header {
+  justify-content: space-between;
+  font-size: 18px;
+  color: #8b959e;
+  position:relative;
+}
+
+.header-left,
+.header-right {
+  line-height: 100px;
+}
+
+/*header left*/
+.logo,
+.go-to-area {
+  display: inline-block;
+}
+.logo > img {
+  width: 45px;
+  vertical-align: middle;
+}
+
+/*header right*/
+.drop-down-container,
+.button-sign-header-container {
+  margin-right: 15px;
+}
+
+.drop-down-container > span {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.drop-down-container  li {
+  line-height: 50px;
+  font-size: 18px;
+}
+
+/*containers-lists position and style */
+.features-container,
+.plans-container,
+.aboutUs-container,
+.help-container  {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px  #8b959e;
+}
+.features-container {
+  right: 0px;
+  top: 0px;
+  transform: translateY(23%);
+}
+.plans-container,
+.aboutUs-container,
+.help-container {
+  left: 0px;
+  top: 0px;
+}
+.plans-container,
+.help-container{
+  transform: translateY(27%);
+}
+.aboutUs-container{
+  transform: translateY(15%);
+}
+
+/*lists*/
+.features-list,
+.plans-list,
+.aboutUs-list,
+.help-list {
+  width: 225px;
+  padding: 20px;
+}
+
+.menu-icon{
+  display: inline-block;
+  background-color:#ced5db;
+  line-height: 16px;
+  border-radius: 50%;
+  padding: 5px;
+  text-align: center;
+}
+.menu-icon > i{
+  color:#fff;
+  font-size: 16px;
+}
+
+/*coming-soon blue-sign*/
+.notAvailable > span{
+  color: #babbbc;
+}
+
+.notAvailable > span::after{
+  content: 'COMING SOON';
+  position:absolute;
+  top:0px;
+  transform: translate(-10%, -30%);
+  color: #00f;
+  font-size: 9px;
+  line-height: 15px;
+}
+/*buttons of header*/
+div[class^="button"] > button{
+  padding: 10px;
+  font-size: 20px;
+  border-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+div[class*="sign"]{
+  margin-right: 20px;
+}
+.button-sign-header-container button{
+  background-color: #f0f0f0;
+  transition: 1s;
+}
+.button-sign-header-container button:hover {
+  background-color: #d0d0d0;
+}
+
+.button-get-header-container button{
+  color: #fff;
+  background-color: #191c1f;
+  transition: 1s;
+}
+.button-get-header-container button:hover{
+  opacity: 0.8;
+}
+
+li > a:hover,
+.go-to-area > a:hover,
+.drop-down-container > span:hover {
+  color:black;
+}

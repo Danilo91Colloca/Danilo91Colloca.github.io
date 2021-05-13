@@ -2,6 +2,7 @@
 @import "partials/_colors";
 @import "partials/_bg-brand-titles";
 #app {
+  min-width: 1200px;
   .overHead-section { 
     @include widthSectionParam;
     height : 45px;
